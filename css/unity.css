@@ -1,0 +1,14 @@
+body{font:normal 12px Tahoma,宋体;}
+body,header,footer,nav,ul,span,ol,li,table,tr,td,dl,dd,dt,form,input,h1,p {margin:0px;padding:0px;}
+a{color:#333333;text-decoration: none;}    
+#container a:hover {color:orangered;} 		
+a img{border:0px;}	
+li{list-style:none;}
+/* input{border:1px #333333 solid;height:18px;width:130px;} */
+.f_l{ float:left;}
+.f_r{ float: right;}
+/* 单独设计的外边距 */
+.mar {
+    margin-right: 12px;
+}
+.mar_bottom{margin-bottom: 12px;}

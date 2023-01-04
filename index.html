@@ -1,0 +1,583 @@
+﻿<!DOCTYPE html>
+<html lang="zh" class="indexhtml">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Keywords" content="网上购物,网上商城,品牌,服装,母婴,化妆品,网购,手机,笔记本,电脑,存储卡">
+		<meta name="description" content="橙汁E商城,网上商城,销售品牌服装、化妆品、数码手机、生鲜超市、母婴、图书、美食等。">
+		<link rel="stylesheet" href="css/unity.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/help.css" type="text/css">
+
+		<title>欢迎来E商城逛逛！</title>
+
+		<!-- jquery -->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<!-- vue -->
+		<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+		<!-- elementUi -->
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<!-- 引入vuex -->
+		<script src="https://unpkg.com/vuex@4.0.0/dist/vuex.global.js"></script>
+		<script src="store/index.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div id="bg">
+				<div class="top_nav"></div>
+				<div class="nav_bg"></div>
+			</div>
+			<div id="container">
+				<!-- 头部开始 -->
+				<header>
+					<!-- 顶部导航开始 -->
+					<div class="top_nav">
+						<ul>
+							<li class="pic pic1"></li>
+							<li id="helper-one"><a id="helper-one" href="pay.html" target="_parent">购物车</a></li>
+							<!--  购物车hover的下拉  -->
+							<div id="num-box">
+								<span v-if="carsNum == 0"> 您的购物车中还没有宝贝 </span>
+								<span v-else>
+									<span> 您的购物车中共有 </span>
+									<span style="color: #d6442d;font-weight: bold;">{{ carsNum }}</span>
+									<span>件商品 </span>
+								</span>
+
+								<el-button style="margin: 0 10px;" type="danger" size="small" @click="showCar"> 查看购物车
+								</el-button>
+							</div>
+
+							<li class="pic pic2"></li>
+							<li><a href="#">我的商城</a></li>
+							<li class="pic pic3"></li>
+							<li><a href="pay.html" target="_parent">我的订单</a></li>
+							<li class="pic pic4"></li>
+							<li><a href="#">橙汁会员</a></li>
+							<li class="pic pic5"></li>
+							<li><a href="#">客户服务</a></li>
+							<li class="log"><a href="login.html" target="_parent">登录</a></li>
+							<li><a href="reg.html" target="_parent">注册</a></li>
+						</ul>
+					</div>
+					<!-- 顶部导航结束 -->
+					<div id="logo"></div>
+					<div class="search">
+						<form action="">
+							<input type="text" placeholder="请输入查找关键字" class="search_text">
+							<input type="image" src="images/search_btn.png" class="search_btn">
+						</form>
+					</div>
+
+					<nav>
+						<ul>
+							<li class="li_sw"><a href="index.html" target="_parent">首页</a></li>
+							<li><a href="list.html" target="_parent">热销推荐</a></li>
+							<li><a href="list.html" target="_parent">新鲜上市</a></li>
+							<li><a href="list.html" target="_parent">秒杀快抢</a></li>
+							<li><a href="list.html" target="_parent">各地风味</a></li>
+							<li><a href="list.html" target="_parent">爱心助农</a></li>
+							<li><a href="list.html" target="_parent">传统美食</a></li>
+							<li class="li_sw"><a href="list.html" target="_parent">蔬菜</a></li>
+							<li class="li_sw"><a href="list.html" target="_parent">水果</a></li>
+							<li class="li_sw"><a href="list.html" target="_parent">零食</a></li>
+							<li class="li_sw"><a href="list.html" target="_parent">生鲜</a></li>
+							<li class="li_sw"><a href="list.html" target="_parent">饮品</a></li>
+							<li class="li_sw"><a href="list.html" target="_parent">谷薯</a></li>
+						</ul>
+					</nav>
+
+				</header>
+				<!-- 头部结束 -->
+				<!--main开始-->
+				<div id="main">
+					<!-- 商品分类开始 -->
+					<div class="cata">
+						<div class="title">分类导航</div>
+						<h1>农家蔬菜</h1>
+						<ul>
+							<li><a href="list.html">大白菜</a></li>
+							<li><a href="list.html">上海青</a></li>
+							<li><a href="list.html">豌豆苗</a></li>
+							<li><a href="list.html">豆芽菜</a></li>
+							<li><a href="list.html">南瓜</a></li>
+							<li><a href="list.html">黄瓜</a></li>
+							<li><a href="list.html">西红柿</a></li>
+							<li><a href="list.html">芹菜</a></li>
+							<li><a href="list.html">小葱</a></li>
+							<li><a href="list.html">莴笋</a></li>
+							<li><a href="list.html">白花菜</a></li>
+							<li><a href="list.html">辣椒</a></li>
+							<li><a href="list.html">菠菜</a></li>
+							<li><a href="list.html">竹笋</a></li>
+							<li><a href="list.html">生菜</a></li>
+						</ul>
+						<h1>香甜水果</h1>
+						<ul>
+							<li><a href="list.html">苹果</a></li>
+							<li><a href="list.html">梨子</a></li>
+							<li><a href="list.html">葡萄</a></li>
+							<li><a href="list.html">水蜜桃</a></li>
+							<li><a href="list.html">樱桃</a></li>
+							<li><a href="list.html">荔枝</a></li>
+							<li><a href="list.html">百香果</a></li>
+							<li><a href="list.html">哈密瓜</a></li>
+							<li><a href="list.html">山竹</a></li>
+							<li><a href="list.html">猕猴桃</a></li>
+							<li><a href="list.html">香蕉</a></li>
+							<li><a href="list.html">桂圆</a></li>
+							<li><a href="list.html">桔子</a></li>
+							<li><a href="list.html">甘蔗</a></li>
+							<li><a href="list.html">杨桃</a></li>
+						</ul>
+						<h1>农人自制</h1>
+						<ul>
+							<li><a href="list.html">腊肠</a></li>
+							<li><a href="list.html">腊鸭</a></li>
+							<li><a href="list.html">重阳酒</a></li>
+							<li><a href="list.html">三江茶</a></li>
+							<li><a href="list.html">藤茶</a></li>
+							<li><a href="list.html">豆腐乳</a></li>
+							<li><a href="list.html">茶油</a></li>
+							<li><a href="list.html">杂酸</a></li>
+							<li><a href="list.html">香菇干</a></li>
+							<li><a href="list.html">腐竹</a></li>
+							<li><a href="list.html">粉丝</a></li>
+							<li><a href="list.html">牛腊巴</a></li>
+							<li><a href="list.html">笋干</a></li>
+							<li><a href="list.html">酸肉</a></li>
+							<li><a href="list.html">萝卜干</a></li>
+						</ul>
+						<h1>传统零食</h1>
+						<ul>
+							<li><a href="list.html">手搓凉粉</a></li>
+							<li><a href="list.html">冰糖葫芦</a></li>
+							<li><a href="list.html">驴打滚</a></li>
+							<li><a href="list.html">扯糖条</a></li>
+							<li><a href="list.html">小麻花</a></li>
+							<li><a href="list.html">桂花糕</a></li>
+							<li><a href="list.html">芝麻球</a></li>
+							<li><a href="list.html">手抓饼</a></li>
+							<li><a href="list.html">蚕花豆</a></li>
+							<li><a href="list.html">炒瓜子</a></li>
+							<li><a href="list.html">花生糖</a></li>
+							<li><a href="list.html">糖藕片</a></li>
+							<li><a href="list.html">芝麻糖</a></li>
+							<li><a href="list.html">豌豆黄</a></li>
+							<li><a href="list.html">核桃酥</a></li>
+						</ul>
+						<h1>生鲜市场</h1>
+						<ul>
+							<li><a href="list.html">禾花鱼</a></li>
+							<li><a href="list.html">果园鸡</a></li>
+							<li><a href="list.html">水库草鱼</a></li>
+							<li><a href="list.html">三防鸭</a></li>
+							<li><a href="list.html">鲳鱼</a></li>
+							<li><a href="list.html">花螺</a></li>
+							<li><a href="list.html">梭子蟹</a></li>
+							<li><a href="list.html">鲍鱼</a></li>
+							<li><a href="list.html">花虾</a></li>
+							<li><a href="list.html">泥鳅</a></li>
+							<li><a href="list.html">牛肉</a></li>
+							<li><a href="list.html">猪肉</a></li>
+							<li><a href="list.html">猪小排</a></li>
+							<li><a href="list.html">猪筒骨</a></li>
+							<li><a href="list.html">黄鳝</a></li>
+						</ul>
+					</div>
+					<!-- 商品分类结束 -->
+					<div class="content">
+						<!--  改版轮播图  -->
+						<div class="content_up">
+							<!-- <img src="images/ad-02.jpg"> -->
+							<el-carousel trigger="click" height="190px">
+								<el-carousel-item v-for="item in imgList" :key="item.id">
+									<el-image :src="item.url" :preview-src-list="[item.url]">
+									</el-image>
+								</el-carousel-item>
+							</el-carousel>
+						</div>
+						<div class="title">热销产品</div>
+						<div class="content_down">
+							<dl class="mar">
+								<dt><img src="images/content_01.jpg" /></dt>
+								<dd><span class="price1">¥129.00</span><span class="price2">¥269.00</span></dd>
+								<dd><a href="details.html">纯手工制作壮锦装饰</a></dd>
+							</dl>
+							<dl class="mar">
+								<dt><img src="images/content_02.jpg" /></dt>
+								<dd><span class="price1">¥269.00</span><span class="price2">¥321.00</span></dd>
+								<dd><a href="details.html">广西壮族20寸挂墙装饰画 壮锦刺绣民宿风格布艺</a></dd>
+							</dl>
+							<dl>
+								<dt><img src="images/content_03.jpg" /></dt>
+								<dd><span class="price1">¥269.00</span><span class="price2">¥540.00</span></dd>
+								<dd><a href="details.html">广西壮族传统特色 创意壮锦笔记本套手工艺品</a></dd>
+							</dl>
+							<dl class="mar">
+								<dt><img src="images/content_04.jpg" /></dt>
+								<dd><span class="price1">¥27.90</span><span class="price2">¥35.00</span></dd>
+								<dd><a href="details.html">【爆甜】6斤整箱大果冷链包邮广西黑叶禾荔应季水果</a></dd>
+							</dl>
+							<dl class="mar">
+								<dt><img src="images/content_05.jpg" /></dt>
+								<dd><span class="price1">¥75.00</span><span class="price2">¥98.00</span></dd>
+								<dd><a href="details.html">大瑶山原始森林野生香菇一斤装劲爆抢购</a></dd>
+							</dl>
+							<dl>
+								<dt><img src="images/content_06.jpg" /></dt>
+								<dd><span class="price1">¥39.00</span><span class="price2">¥68.00</span></dd>
+								<dd><a href="details.html">正宗新疆和田大枣精选5斤肉厚核小先到先得</a></dd>
+							</dl>
+							<dl class="mar">
+								<dt><img src="images/content_07.jpg" /></dt>
+								<dd><span class="price1">¥3.90</span><span class="price2">¥15.00</span></dd>
+								<dd><a href="details.html">农家有机小青菜3斤装超值特惠尝鲜</a></dd>
+							</dl>
+							<dl class="mar">
+								<dt><img src="images/content_08.jpg" /></dt>
+								<dd><span class="price1">¥48.00</span><span class="price2">¥88.00</span></dd>
+								<dd><a href="details.html">拼手速云南蒙自石榴鲜嫩多汁颗粒饱满</a></dd>
+							</dl>
+							<dl>
+								<dt><img src="images/content_09.jpg" /></dt>
+								<dd><span class="price1">¥88.00</span><span class="price2">¥128.00</span></dd>
+								<dd><a href="details.html">正宗果园散养走地鸡无污染吃虫吃草煲汤贼香</a></dd>
+							</dl>
+						</div>
+					</div>
+					<!-- 坚向广告开始 -->
+					<div class="content_adv mar">
+						<div class="adv1"><a href="details.html?name='龙泉山野生香菇纯天然无污染肉厚鲜美产地直发'"><img
+									src="images/content_adv01.jpg"></a></div>
+						<div class="adv2"><a href="details.html?name='香囊'"><img src="images/content_adv02.jpg"></a>
+						</div>
+						<div class="adv2"><a href="details.html?name='螺蛳粉'"><img src="images/content_adv03.jpg"></a>
+						</div>
+						<div class="adv2 adv4"><a href="details.html?name='鸡蛋'"><img src="images/content_adv04.jpg"></a>
+						</div>
+					</div>
+					<!-- 坚向广告结束 -->
+					<div class="aside">
+						<div class="user_log">
+							<img src="images/userIcon.jpg" class="f_l mar" />
+							<p class="f_l">欢迎来到E商城！</p>
+							<p class="f_l"><a href="login.html" target="_blank">登录</a> | <a href="reg.html"
+									target="_blank">注册</a></p>
+							<div class="new_user f_l">新人福利</div>
+							<div class="member f_l">加入会员</div>
+						</div>
+						<div class="title">橙汁头条</div>
+						<div class="new">
+							<ul>
+								<li><span class="f_l">头条</span><a href="#" class="f_l">北海涠洲岛新鲜鱿鱼上市</a></li>
+								<li><span class="f_l">疯抢</span><a href="#" class="f_l">灵山大荔枝速抢送货到家</a></li>
+								<li><span class="f_l">热推</span><a href="#" class="f_l">枸杞泡红枣开启养生之旅</a></li>
+								<li><span class="f_l">清仓</span><a href="#" class="f_l">端午板栗猪肉粽子准备截单</a></li>
+							</ul>
+						</div>
+						<!-- 热卖爆款开始 -->
+						<div class="title">热卖爆款</div>
+						<div class="hot">
+							<dl>
+								<dt><img src="images/show1.jpg" alt="alt" /></dt>
+								<dd><a href="details.html">新鲜荔枝上市！</a></dd>
+							</dl>
+							<dl>
+								<dt><img src="images/show2.jpg" alt="alt" /></dt>
+								<dd><a href="details.html">北海船晒鱿鱼干尝鲜</a></dd>
+							</dl>
+							<dl>
+								<dt><img src="images/show3.jpg" alt="alt" /></dt>
+								<dd><a href="details.html">云南野生菌干赞！</a></dd>
+							</dl>
+							<dl>
+								<dt><img src="images/show4.jpg" alt="alt" /></dt>
+								<dd><a href="details.html">农家腊鸭快来抢</a></dd>
+							</dl>
+						</div>
+						<!-- 热卖爆款结束 -->
+						<!-- 选项卡开始 -->
+						<div class="tab">
+							<div class="tab1 f_l">橙汁钱包</div>
+							<div class="tab2 f_l">更多功能</div>
+							<form action="">
+								<table>
+									<tr>
+										<td>号码：</td>
+										<td><input type="text" placeholder="请输入手机号" class="input_w"></td>
+									</tr>
+									<tr>
+										<td>面值：</td>
+										<td>
+											<select name="vaule" id="">
+												<option value="30">30元</option>
+												<option value="50">50元</option>
+												<option value="100" selected>100元</option>
+												<option value="200">200元</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td>优惠：</td>
+										<td>缴费面值1.2倍</td>
+									</tr>
+									<tr>
+										<td colspan="2"><span class="paybtn">确定</span></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</div>
+					<!-- 右侧边栏结束 -->
+				</div>
+				<!-- main结束 -->
+			</div>
+			<!-- container结束 -->
+			<!--  左右两边的广告  -->
+			<div class="banner left-banner">
+				<img src="https://photo.16pic.com/00/61/65/16pic_6165986_b.jpg" alt="">
+			</div>
+			<div class="banner right-banner">
+				<img src="https://photo.16pic.com/00/54/39/16pic_5439401_b.jpg" alt="">
+			</div>
+			<div class="h_24"></div>
+			<div class="sale">
+				<div class="sale_time f_l"></div>
+				<dl class="f_l">
+					<dt><img src="images/sale01.jpg" alt=""></dt>
+					<dd><a href="#">农人自制肥瘦相间三江特产烟熏肠</a></dd>
+					<dd class="sale_price"><span class="price1">¥89.00</span><span class="price2">¥129.00</span></dd>
+				</dl>
+				<dl class="f_l">
+					<dt><img src="images/sale02.jpg" alt=""></dt>
+					<dd><a href="#">活蹦乱跳新鲜禾花鱼3斤装</a></dd>
+					<dd class="sale_price"><span class="price1">¥29.00</span><span class="price2">¥39.00</span></dd>
+				</dl>
+				<dl class="f_l">
+					<dt><img src="images/sale03.jpg" alt=""></dt>
+					<dd><a href="#">三江鼓楼重阳酒甜甜好爽口</a></dd>
+					<dd class="sale_price"><span class="price1">¥58.00</span><span class="price2">¥78.00</span></dd>
+				</dl>
+				<dl class="f_l">
+					<dt><img src="images/sale04.jpg" alt=""></dt>
+					<dd><a href="#">正宗洛川苹果脆甜大果不打蜡连皮吃</a></dd>
+					<dd class="sale_price"><span class="price1">¥78.00</span><span class="price2">¥118.00</span></dd>
+				</dl>
+				<dl class="f_l">
+					<dt><img src="images/sale05.jpg" alt=""></dt>
+					<dd><a href="#">回忆奶奶的味道红油豆腐乳好下饭 </a></dd>
+					<dd class="sale_price"><span class="price1">¥30.00</span><span class="price2">¥45.00</span></dd>
+				</dl>
+			</div>
+			<div id="footer">
+				<div class="add">版权 © 2003-2010 北京市橙汁e商城有限公司 ALL RIGHT RESERVED 热线400-5678-888
+					<br>ICP：桂ICP备0000000号
+				</div>
+				<div><img src="images/img1.gif" alt=""></div>
+			</div>
+
+			<!--  我的客服盒子  -->
+			<div @click="showProp" class="service-man">
+				<img style="float: left;" src="images/userIcon.jpg" alt="">
+				<span style="margin-left: 14px;"> 我的客服 </span>
+			</div>
+			<!--  回到顶部  -->
+			<div @click="backTop" class="back-top">
+				<img src="https://gw.alicdn.com/imgextra/i2/O1CN01Y4zFv321hpwwLhdDy_!!6000000007017-2-tps-48-48.png"
+					alt="">
+				<span> 回到顶部 </span>
+			</div>
+			<!--  我的客服弹窗  -->
+			<el-dialog title="我的客服" :visible.sync="dialogVisible" width="50%" :before-close="handleClose"
+				:close-on-click-modal="false" :close-on-press-escape="false">
+				<div class="content-man">
+					<div class="man">
+						<img src="images/userIcon.jpg" alt="">
+						<span style="margin-left: 10px;"> 客服 </span>
+					</div>
+
+					<div class="man-content">
+						您好，请问有什么可以帮您？
+					</div>
+
+					<div v-for="(item, index) in messageArr" :key="index">
+						<div class="man" v-if="item.man">
+							<img src="images/userIcon.jpg" alt="">
+							<span style="margin-left: 10px;"> 客服 </span>
+						</div>
+
+						<div class="man-content" v-if="item.man">
+							{{ item.man }}
+						</div>
+
+						<div class="me" v-if="item.me">
+							<div class="help">
+								<img src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F202103%2F09%2F20210309094501_jfyix.thumb.1000_0.jpg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1675440358&t=9d37098b9bf853e3cd56ca769cfee318"
+									alt="">
+								<span style="margin-left: 10px;"> 我 </span>
+							</div>
+
+						</div>
+
+						<div class="me-conter" v-if="item.me">
+							{{ item.me }}
+						</div>
+					</div>
+				</div>
+				<div>
+					<el-input type="textarea" v-model="message" placeholder="请输入要发送的内容..."></el-input>
+				</div>
+				<span slot="footer" class="dialog-footer">
+					<el-button type="danger" @click="sendMessage"> 发 送 </el-button>
+				</span>
+			</el-dialog>
+		</div>
+	</body>
+
+</html>
+
+<script>
+	new Vue({
+		el: '#app',
+		store,
+		data() {
+			return {
+				imgList: [{
+						id: 1,
+						url: 'https://gw.alicdn.com/imgextra/i3/6000000006949/O1CN01fWnrLa21Ch4A7lxOU_!!6000000006949-0-octopus.jpg_570x10000Q75.jpg_.webp'
+					},
+					{
+						id: 2,
+						url: 'https://gw.alicdn.com/imgextra/i3/O1CN01ku1QvU1FdclsstCyR_!!6000000000510-0-tps-520-280.jpg_570x10000Q75.jpg_.webp'
+					},
+					{
+						id: 3,
+						url: 'https://img.alicdn.com/imgextra/i4/6000000004047/O1CN01Y8A3Cu1flZaFyZZft_!!6000000004047-0-alimamazszw.jpg'
+					},
+					{
+						id: 4,
+						url: 'https://img.alicdn.com/simba/img/TB1lUZLJVXXXXXtXFXXSutbFXXX.jpg'
+					},
+					{
+						id: 5,
+						url: 'https://gw.alicdn.com/imgextra/i3/O1CN01Am8Sra21Zaice06ax_!!6000000006999-2-tps-1130-500.png_570x10000.jpg_.webp',
+					},
+				],
+				dialogVisible: false,
+				message: '', // 我发送的内容
+				messageArr: [], // 存放对话消息
+			}
+		},
+		computed: {
+			carsNum() {
+				return JSON.parse(localStorage.getItem('resultCars')).length;
+			} // 购物车中商品数量
+		},
+		watch: {},
+		methods: {
+			showCar() {
+				window.location.href = "/xhsTwo/pay.html";
+			},
+
+			/*  监听滚动条高度   */
+			listenScroll() {
+				// 实现图片随着滚动条滚动
+				let height = document.documentElement.clientHeight; // 可视区的高度
+				let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // 滚动条距离顶部的高度
+				let bottomHeight = document.documentElement.scrollHeight - document.documentElement.scrollTop -
+					document.documentElement
+					.clientHeight; // 滚动条距离底部的高度
+				let leftBanner = document.querySelector('.left-banner');
+				let rightBanner = document.querySelector('.right-banner');
+				let resHeight = (height - 500) / 2 + scrollTop / 2;
+				if (scrollTop < 70) {
+					leftBanner.style.setProperty('margin-top', 100 + 'px', 'important');
+					rightBanner.style.setProperty('margin-top', 100 + 'px', 'important');
+				}
+				if (scrollTop >= 70) {
+					leftBanner.style.setProperty('margin-top', resHeight + 'px', 'important');
+					rightBanner.style.setProperty('margin-top', resHeight + 'px', 'important');
+				}
+			},
+
+			/*  回到顶部  */
+			backTop() {
+				document.documentElement.scrollTop = 0;
+			},
+
+			/*  展示我的客服弹窗 */
+			showProp() {
+				this.dialogVisible = true;
+			},
+
+			/*  关闭弹窗  */
+			handleClose() {
+				this.dialogVisible = false;
+			},
+
+			/*  弹窗内 发送消息给客服  */
+			sendMessage() {
+				if (this.message === '') {
+					this.$message.warning("请先输入您的问题。");
+				} else {
+					console.log(this.messageArr.length);
+					// 第一次问问题
+					if (this.messageArr.length === 0) {
+						this.messageArr.push({
+							man: null,
+							me: this.message
+						})
+						this.message = '';
+					}
+					// 不是第一次问问题
+					if (this.messageArr.length > 0) {
+						let me = this.message;
+						this.messageArr.push({
+							man: null,
+							me: me
+						})
+						this.message = '';
+						setTimeout(() => {
+							this.messageArr.push({
+								man: '对不起，我回答不了你的问题，请换一个问题...',
+								me: null
+							})
+						}, 500)
+					}
+					console.log(this.messageArr);
+				}
+			}
+		},
+
+		created() {
+			let aaa = localStorage.getItem('resultCars');
+			if (JSON.parse(aaa) === [] || !aaa) {
+				localStorage.setItem('resultCars', JSON.stringify(store.state.cars));
+			}
+		},
+
+		mounted() {
+			/*  图片随着滚动条滚动  */
+			let height = document.documentElement.clientHeight; // 可视区的高度
+			let scrollTop = document.documentElement.scrollTop || document.body.scrollTop; // 滚动条距离顶部的高度
+			let leftBanner = document.querySelector('.left-banner');
+			let rightBanner = document.querySelector('.right-banner');
+			let resHeight = (height - 500) / 2 + scrollTop / 2;
+			if (document.documentElement.scrollTop > 70) {
+				leftBanner.style.setProperty('margin-top', resHeight + 'px', 'important');
+				rightBanner.style.setProperty('margin-top', resHeight + 'px', 'important');
+			}
+			window.addEventListener('scroll', this.listenScroll)
+		},
+
+		beforeDestroy() {
+			window.removeEventListener('scroll', this.listenScroll)
+		}
+	})
+</script>

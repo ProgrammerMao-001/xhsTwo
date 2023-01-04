@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh" class="indexhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Keywords" content="网上购物,网上商城,品牌,服装,母婴,化妆品,网购,手机,笔记本,电脑,存储卡">
+  <meta name="description" content="橙汁E商城,网上商城,销售品牌服装、化妆品、数码手机、生鲜超市、母婴、图书、美食等。">
+  <link rel="stylesheet" href="css/unity.css" type="text/css">
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+
+
+  <title>橙汁E商城</title>
+</head>
+
+<body>
+  <div id="bg">
+    <div class="top_nav"></div>
+    <div class="nav_bg"></div>
+  </div>
+  <!-- container开始 -->
+  <div id="container">
+    <iframe id="header" runat="server" src="header.html" width="1200" height="156" frameborder="0"
+      scrolling="no"></iframe>
+
+    <form id="form1" method="post" action="">
+
+      <table class="reg reg_table" cellspacing="0px" cellpadding="0px">
+        <caption>
+          <h2>网站会员注册</h2>
+        </caption>
+        <tbody>
+          <tr>
+            <td class="aling_r"><label for="fname">*昵称：</label></td>
+            <td><input name="fname" id="fname" type="text" required /></td>
+            <td rowspan="10">
+              <table class="table_small">
+                <tr>
+
+                  <td class="registrer_code">扫一扫注册</td>
+                </tr>
+                <tr>
+
+                  <td class="registrer_code"><img src="images/register_code.jpg" alt="扫一扫二维码"></td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr >
+            <td class="aling_r"><label for="lname">*手机号：</label></td>
+            <td><input name="phone" maxlength="11" pattern="^1\d{10}$" placeholder="请输入手机号" required
+                oninvalid="setCustomValidity('请输入11位手机号');" /></td>
+          </tr>
+          <tr>
+            <td class="aling_r"><label for="sname">*登录名：</label></td>
+            <td><input name="sname" id="sname" type="text" pattern="^[a-z0-9_]{4,14}$" required />
+              （只能为 a-z、0-9 或下划线，输入长度为4-14个字符）</td>
+          </tr>
+          <tr>
+            <td class="aling_r"><label for="pass">*密码：</label></td>
+            <td><input name="pass" id="pass" type="password" pattern="^\d{6}$" required />
+              （请输入6位密码）</td>
+          </tr>
+          <tr>
+            <td class="aling_r"><label for="rpass">*确认密码：</label></td>
+            <td><input name="rpass" id="rpass" type="password" /></td>
+          </tr>
+          <tr>
+            <td class="aling_r"><label for="email">电子邮箱：</label></td>
+            <td><input name="email" id="email" type="email" /></td>
+          </tr>
+          <tr>
+            <td class="aling_r"><label for="gender">性别：</label></td>
+            <td><input name="gender" id="gender" type="radio" value="男" checked="checked" />
+              女&nbsp;
+              <input name="gender" type="radio" value="女" />
+              男 </td>
+          </tr>
+          <tr>
+            <td class="aling_r">我的照片：</td>
+            <td><input type="file" /></td>
+          </tr>
+          <tr>
+            <td class="aling_r"><label for="hobby">购物喜好：</label></td>
+            <td><input type="checkbox" name="hobby" id="hobby" value="checkbox" />
+              &nbsp;手机数码&nbsp;&nbsp;
+              <input type="checkbox" name="hobby2" value="checkbox" />
+              &nbsp;服饰化妆&nbsp;&nbsp;
+              <input type="checkbox" name="hobby3" value="checkbox" />
+              &nbsp;生活百货
+
+              <input type="checkbox" name="hobby4" value="checkbox" />
+              &nbsp;母婴童装 </td>
+          </tr>
+          <tr >
+            <td class="aling_r"><label for="nYear">出生日期：</label></td>
+            <td><input type="date" name="brith" id="myBrith" />
+              <select name="nMonth">
+                <option value="" selected="selected">[选择所在国家]</option>
+                <option value="0">中国</option>
+                <option value="1">美国</option>
+                <option value="2">日本</option>
+                <option value="3">韩国</option>
+              </select></td>
+          </tr>
+          <tr>
+            <td colspan="3">
+              <table class="reg_table2">
+                <tr>
+                  <td>
+                    <h4>阅读橙汁e网服务协议 </h4>
+                  </td>
+                </tr>
+                <tr>
+                  <td><textarea name="textarea" cols="106" rows="8"
+                      readonly="readonly">注册服务条款尊敬的用户，欢迎您注册成为本网站用户。在注册前请您仔细阅读如下服务条款：本服务协议双方为本网站与本网站用户，本服务协议具有合同效力。您确认本服务协议后，本服务协议即在您和本网站之间产生法律效力。请您务必在注册之前认真阅读全部服务协议内容，如有任何疑问，可向本网站咨询。无论您事实上是否在注册之前认真阅读了本服务协议，只要您点击协议正本下方的"注册"按钮并按照本网站注册程序成功注册为用户，您的行为仍然表示您同意并签署了本服务协议。1．本网站服务条款的确认和接纳文库本网站各项服务的所有权和运作权归本网站拥有。2．用户必须：(1)自行配备上网的所需设备，包括个人电脑、调制解调器或其他必备上网装置。(2)自行负担个人上网所支付的与此服务有关的电话费用、网络费用。3．用户在本网站上交易平台上不得发布下列违法信息：(1)反对宪法所确定的基本原则的；(2).危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；(3).损害国家荣誉和利益的；(4).煽动民族仇恨、民族歧视，破坏民族团结的；(5).破坏国家宗教政策，宣扬邪教和封建迷信的；(6).散布谣言，扰乱社会秩序，破坏社会稳定的；(7).散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；(8).侮辱或者诽谤他人，侵害他人合法权益的；(9).含有法律、行政法规禁止的其他内容的。4．有关个人资料用户同意：(1)提供及时、详尽及准确的个人资料。(2).同意接收来自本网站的信息。(3)不断更新注册资料，符合及时、详尽准确的要求。所有原始键入的资料将引用为注册资料。(4)本网站不公开用户的姓名、地址、电子邮箱和笔名，以下情况除外：（a）用户授权本网站透露这些信息。（b）相应的法律及程序要求本网站提供用户的个人资料。如果用户提供的资料包含有不正确的信息，本网站保留结束用户使用本网站信息服务资格的权利。</textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <td ><input type="checkbox" name="agree" />我认真阅读并接受以上协议</td>
+                </tr>
+                <tr>
+
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="3" class="aling_c"><input type="submit" name="submit" value="提交" />
+              <input type="reset" name="reset" value="重置" /></td>
+          </tr>
+        </tbody>
+      </table>
+    </form>
+
+  </div>
+  <!-- container结束 -->
+
+  <iframe id="header" runat="server" src="footer.html" width="100%" height="170" frameborder="0"
+    scrolling="no"></iframe>
+</body>
+
+</html>

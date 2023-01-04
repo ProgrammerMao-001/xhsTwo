@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="Keywords" content="热销推荐,新鲜上市,秒杀,蔬菜,水果,粮油,生鲜,小吃,饮品,干货,奶制品">
+		<meta name="description" content="橙汁E商城,网上商城,销售品牌服装、化妆品、数码手机、生鲜超市、母婴、图书、美食等。">
+		<link rel="stylesheet" href="css/unity.css" type="text/css">
+		<link rel="stylesheet" href="css/style.css" type="text/css">
+		<link rel="stylesheet" href="css/help.css">
+
+		<title>橙汁E商城</title>
+
+		<!-- jquery -->
+		<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+		<!-- vue -->
+		<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+		<!-- elementUi -->
+		<!-- 引入样式 -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入组件库 -->
+		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<!-- 引入vuex -->
+		<script src="https://unpkg.com/vuex@4.0.0/dist/vuex.global.js"></script>
+		<script src="store/index.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div id="bg">
+				<div class="top_nav"></div>
+				<div class="nav_bg"></div>
+			</div>
+			<!-- container开始 -->
+			<div id="container">
+				<iframe id="header" runat="server" src="header.html" width="1200" height="156" frameborder="0"
+					scrolling="no"></iframe>
+				<div class="details_brea"><a>农人自制</a>><a>干货</a>><a>香菇干</a></div>
+				<div id="details_content">
+					<!-- 左图开始 -->
+					<ul>
+						<!-- <li><img src="images/detail_big01.jpg" alt=""><a href="#"></a></li> -->
+						<li>
+							<el-carousel trigger="click" height="150px">
+								<el-carousel-item v-for="item in imgList" :key="item.id">
+									<el-image style="width: 350px;height: 350px;" :src="item.url"
+										:preview-src-list="[item.url]">
+									</el-image>
+								</el-carousel-item>
+							</el-carousel>
+						</li>
+						<li><img src="images/detail01.jpg" alt=""><a href="#"></a></li>
+						<li><img src="images/detail02.jpg" alt=""><a href="#"></a></li>
+						<li><img src="images/detail03.jpg" alt=""><a href="#"></a></li>
+						<li><img src="images/detail04.jpg" alt=""><a href="#"></a></li>
+						<li><img src="images/detail05.jpg" alt=""><a href="#"></a></li>
+					</ul>
+					<!-- 右图开始 -->
+					<ul>
+						<li>{{ name }}</li>
+						<li><span>最后疯抢</span><span>距离结束还有</span><span>{{ form.hour }}</span>:<span>{{ form.minute }}</span>:<span>{{ form.second }}</span>
+						</li>
+						<li><span>疯抢价</span><span>￥{{prize}}</span></li>
+						<li><span>运费</span><span>大部分地区包邮，偏远地区快递10元</span></li>
+						<li><span>商品库存</span><span>1236件</span></li>
+						<div><span class="list-size">商品尺码</span>
+							<el-radio-group v-model="size">
+								<el-radio v-for="item in sizeList" :key="item.id" :label="item.value"
+									:value="item.vale">{{ item.value }}g</el-radio>
+							</el-radio-group>
+						</div>
+						<li><span>本来销售</span><span>12598件</span></li>
+						<li><span>商品所在地</span><span>广西</span></li>
+						<li><span>关注人数</span><span>45698人</span></li>
+						<li><span>商品产地</span><span>龙泉山</span></li>
+						<div style="display: flex;width: 250px;margin-left: 12px;">
+							<span style="width: 40px;line-height: 30px;color: #666666;">数量</span>
+							<el-input-number size="small" v-model="num" controls-position="right" :min="1" :max="999">
+							</el-input-number>
+						</div>
+
+						<div style="margin: 20px;">
+							<el-button size="medium" type="danger">立刻购买</el-button>
+							<el-button @click="inCar" size="medium" type="danger">加入购物车</el-button>
+						</div>
+						<li><img src="images/concern.png"><a>关注</a><img src="images/share.png"><a>分享</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- container结束 -->
+			<div class="footer-class">
+				<iframe id="header" runat="server" src="footer.html" width="100%" height="170" frameborder="0"
+					scrolling="no"></iframe>
+			</div>
+		</div>
+	</body>
+
+</html>
+
+<script>
+	new Vue({
+		el: '#app',
+		store,
+		data() {
+			return {
+				size: 100,
+				sizeList: [{
+						id: 1,
+						value: 100
+					},
+					{
+						id: 2,
+						value: 200
+					},
+					{
+						id: 3,
+						value: 300
+					},
+					{
+						id: 4,
+						value: 400
+					}
+				],
+				num: 0,
+				imgList: [{
+					id: 0,
+					url: 'images/detail_big01.jpg'
+				}, {
+					id: 1,
+					url: 'https://a.vpimg4.com/upload/merchandise/pdcpos/1100010321/2021/0423/16/fa41659f-5e84-4773-a381-fedad3b28f5c.jpg'
+				}, {
+					id: 2,
+					url: 'https://img0.baidu.com/it/u=3010071718,3644862761&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=666'
+				}, {
+					id: 3,
+					url: 'https://safe-img.xhscdn.com/bw1/d73fa0e2-1daf-4114-81cf-590a025a6a55?imageView2/2/w/1080/format/jpg'
+				}, {
+					id: 4,
+					url: 'https://safe-img.xhscdn.com/bw1/524f968b-9de7-4d2a-a729-396af003810f?imageView2/2/w/1080/format/jpg'
+				}, {
+					id: 5,
+					url: 'http://t13.baidu.com/it/u=3572901871,1599679316&fm=224&app=112&f=JPEG?w=500&h=500'
+				}],
+				name: '商品名称',
+				form: {
+					hour: '00',
+					minute: '00',
+					second: '00'
+				}, // 时分秒
+				timer: null,
+			}
+		},
+		computed: {
+			prize() {
+				return Math.floor(Math.random() * 500 + 1)
+			}
+		},
+		methods: {
+			/*  加入购物车  */
+			inCar() {
+				let formData = {
+					id: this.randomString(),
+					name: this.name,
+					pic: 'https://img0.baidu.com/it/u=1203513050,788537387&fm=253&fmt=auto&app=120&f=JPEG?w=1280&h=800',
+					size: this.size,
+					num: this.num,
+					prize: this.prize,
+				}
+				store.commit('sGetFormData', formData);
+				localStorage.setItem('resultCars', JSON.stringify(store.state.cars))
+				window.location.href = "/xhsTwo/pay.html";
+			},
+
+			/*  生成随机字符串 id  */
+			randomString() {
+				let chars = '0123456789';
+				let strLen = chars.length;
+				let randomStr = '';
+				for (let i = 0; i < 10; i++) {
+					randomStr += chars.charAt(Math.floor(Math.random() * strLen));
+				}
+				return randomStr
+			},
+
+			/*  实现倒计时的效果  */
+			countDown(year, month, day, hours) {
+				let now = new Date();
+				let endDate = new Date(year, month - 1, day, hours);
+				let leftTime = endDate.getTime() - now.getTime(); //计算剩余的毫秒数
+				if (leftTime <= 0) {
+					leftTime = 0;
+				}
+				let leftsecond = parseInt(leftTime / 1000); //计算剩余的秒数
+				let hour = Math.floor((leftsecond - day * 24 * 60 * 60) / 3600);
+				let minute = Math.floor((leftsecond - day * 24 * 60 * 60 - hour * 3600) / 60);
+				let second = Math.floor(leftTime / 1000 % 60, 10);
+				this.form = {
+					hour: hour.toString().slice(4, 6),
+					minute: minute,
+					second: second
+				}
+				this.timer = setTimeout(() => {
+					this.countDown(2050, 12, 31, 24);
+				}, 1000)
+			}
+		},
+		mounted() {
+			let search = decodeURI(location.search);
+			let res = search.substring(7, search.length - 1);
+			this.name = res;
+
+			let resultCars = JSON.parse(localStorage.getItem('resultCars'));
+			store.commit('sNewCars', resultCars);
+		},
+
+		created() {
+			this.countDown(2050, 12, 31, 24);
+		},
+
+		destroyed() {
+			this.timer = null;
+		}
+	})
+</script>
+
+
+<style scoped>
+	.el-image {
+		height: 344px !important;
+		width: 526px !important;
+	}
+
+	.el-carousel__arrow {
+		top: 50% !important;
+	}
+</style>

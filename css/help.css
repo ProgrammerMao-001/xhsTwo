@@ -1,0 +1,206 @@
+/* 以下样式是新增的帮助的样式文件 */
+.help_class a:hover {
+	color: orangered;
+}
+
+
+/* details样式如下 */
+.list-size {
+	width: 60px;
+	text-align: right;
+	margin-right: 20px;
+	font-size: 12px;
+	color: #666666;
+	display: inline-block;
+}
+
+/* 修改option 颜色 */
+.el-radio__input.is-checked .el-radio__inner {
+	border-color: #d6442d !important;
+	background: #d6442d !important;
+}
+
+/* 修改option 颜色 */
+.el-radio__input.is-checked+.el-radio__label {
+	color: #d6442d !important;
+}
+
+
+.el-carousel__container {
+	height: 350px !important;
+	margin-bottom: 10px !important;
+}
+
+#details_content ul {
+	z-index: -10;
+}
+
+/* pay样式如下 */
+.el-button--text {
+	color: #333 !important;
+	font: normal 12px Tahoma, 宋体 !important;
+}
+
+.el-button--text:hover {
+	color: orangered !important;
+}
+
+.none_id {
+	text-align: center;
+	font-size: 18px;
+	color: orangered;
+	font-weight: 700;
+	margin-top: 80px;
+	letter-spacing: 1px;
+}
+
+/* index样式如下 */
+.el-button--danger {
+	background-color: #d6442d !important;
+	border-color: #d6442d !important;
+}
+
+#num-box {
+	width: 264px;
+	height: 30px;
+	padding: 10px 0 10px 10px;
+	background-color: #f5f5f5;
+	position: absolute;
+	top: 29px;
+	opacity: 0;
+	display: none;
+}
+
+#num-box:hover {
+	opacity: 1;
+	display: block;
+}
+
+ul:hover #num-box {
+	opacity: 1 !important;
+	display: block !important;
+}
+
+
+.banner {
+	z-index: 999999 !important;
+	width: 280px;
+	height: 500px;
+	position: absolute;
+}
+
+.banner img {
+	width: 100%;
+	height: 100%;
+}
+
+.left-banner {
+	left: 20px;
+}
+
+.right-banner {
+	right: 20px;
+}
+
+.el-image {
+	height: 190px !important;
+	width: 526px !important;
+}
+
+.el-carousel__arrow {
+	top: 30% !important;
+}
+
+.back-top {
+	padding: 2px 10px;
+	width: 60px;
+	height: 80px;
+	cursor: pointer;
+	background-color: #f7f9fa;
+	float: right;
+	margin: -108px 10px 0 0;
+}
+
+.back-top span {
+	display: block;
+	font-size: 12px;
+	color: #111;
+	font-weight: bold;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+
+.service-man {
+	cursor: pointer;
+	position: fixed;
+	left: 20px;
+	width: 136px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+	font-weight: bold;
+	animation: myfirst 5s infinite alternate;
+}
+
+@keyframes myfirst {
+	0% {
+		bottom: 10px;
+	}
+
+	25% {
+		bottom: 25px;
+	}
+
+	50% {
+		bottom: 50px;
+	}
+
+	75% {
+		bottom: 75px;
+	}
+
+	100% {
+		bottom: 10px;
+	}
+}
+
+.content-man {
+	height: 350px;
+	overflow-y: auto;
+}
+
+.content-man .man {
+	line-height: 30px;
+	letter-spacing: 1px;
+}
+
+.content-man .man img {
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+.content-man .man-content {
+	margin-left: 42px;
+}
+
+.content-man .me {
+	line-height: 30px;
+	letter-spacing: 1px;
+	height: 30px;
+}
+
+.content-man .me .help {
+	float: right;
+}
+
+.content-man .me img {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	float: left;
+}
+.content-man .me-conter {
+	float: right;
+	margin: 10px 42px 0 0;
+}
