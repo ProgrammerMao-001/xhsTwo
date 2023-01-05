@@ -24,6 +24,8 @@
 		<!-- 引入vuex -->
 		<script src="https://unpkg.com/vuex@4.0.0/dist/vuex.global.js"></script>
 		<script src="store/index.js"></script>
+
+		<script src="https://unpkg.com/@jiaminghi/data-view/dist/datav.map.vue.js"></script>
 	</head>
 
 	<body>
@@ -273,33 +275,15 @@
 							<div class="member f_l">加入会员</div>
 						</div>
 						<div class="title">橙汁头条</div>
-						<div class="new">
+						<div class="new index-title">
 							<ul>
-								<li><span class="f_l">头条</span><a href="#" class="f_l">北海涠洲岛新鲜鱿鱼上市</a></li>
-								<li><span class="f_l">疯抢</span><a href="#" class="f_l">灵山大荔枝速抢送货到家</a></li>
-								<li><span class="f_l">热推</span><a href="#" class="f_l">枸杞泡红枣开启养生之旅</a></li>
-								<li><span class="f_l">清仓</span><a href="#" class="f_l">端午板栗猪肉粽子准备截单</a></li>
+								<dv-scroll-board :config="titleData" style="width:210px;height:130px;margin: -12px 0 0 -7px" />
 							</ul>
 						</div>
 						<!-- 热卖爆款开始 -->
 						<div class="title">热卖爆款</div>
-						<div class="hot">
-							<dl>
-								<dt><img src="images/show1.jpg" alt="alt" /></dt>
-								<dd><a href="details.html">新鲜荔枝上市！</a></dd>
-							</dl>
-							<dl>
-								<dt><img src="images/show2.jpg" alt="alt" /></dt>
-								<dd><a href="details.html">北海船晒鱿鱼干尝鲜</a></dd>
-							</dl>
-							<dl>
-								<dt><img src="images/show3.jpg" alt="alt" /></dt>
-								<dd><a href="details.html">云南野生菌干赞！</a></dd>
-							</dl>
-							<dl>
-								<dt><img src="images/show4.jpg" alt="alt" /></dt>
-								<dd><a href="details.html">农家腊鸭快来抢</a></dd>
-							</dl>
+						<div class="hot index-hot">
+							<dv-scroll-board :config="hotData" style="width:220px;height:240px" />
 						</div>
 						<!-- 热卖爆款结束 -->
 						<!-- 选项卡开始 -->
@@ -472,6 +456,59 @@
 				dialogVisible: false,
 				message: '', // 我发送的内容
 				messageArr: [], // 存放对话消息
+				hotData: {
+					data: [
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/show1.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='新鲜荔枝上市'">新鲜荔枝上市！</a></dd>
+							</dl>`],
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/show2.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='北海船晒鱿鱼干尝鲜'">北海船晒鱿鱼干尝鲜</a></dd>
+							</dl>`],
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/show3.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='云南野生菌干赞'">云南野生菌干赞！</a></dd>
+							</dl>`],
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/show4.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='农家腊鸭快来抢'">农家腊鸭快来抢</a></dd>
+							</dl>`],
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/content_adv04.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='土家鸡蛋'">土家鸡蛋</a></dd>
+							</dl>`],
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/content_adv03.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='招牌螺蛳粉'">招牌螺蛳粉</a></dd>
+							</dl>`],
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/content_adv02.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='特制香囊'">特制香囊</a></dd>
+							</dl>`],
+						[`<dl class="index-hot-dl">
+								<dt><img src="images/content_adv01.jpg" alt="alt" /></dt>
+								<dd><a href="details.html?name='特色小吃'">特色小吃</a></dd>
+							</dl>`],
+					],
+					waitTime: 1000,
+					oddRowBGC: '#ffffff',
+					evenRowBGC: '#ffffff',
+					rowNum: 4
+				},
+				titleData: {
+					data: [
+						[`<li class="index-title-li"><span class="f_l">头条</span><a style="cursor: pointer" class="f_l" title="北海涠洲岛新鲜鱿鱼上市">北海涠洲岛新鲜鱿鱼上市</a></li>`],
+						[`<li class="index-title-li"><span class="f_l">疯抢</span><a style="cursor: pointer" class="f_l" title="灵山大荔枝速抢送货到家">灵山大荔枝速抢送货到家</a></li>`],
+						[`<li class="index-title-li"><span class="f_l">热推</span><a style="cursor: pointer" class="f_l" title="枸杞泡红枣开启养生之旅">枸杞泡红枣开启养生之旅</a></li>`],
+						[`<li class="index-title-li"><span class="f_l">清仓</span><a style="cursor: pointer" class="f_l" title="端午板栗猪肉粽子准备截单">端午板栗猪肉粽子准备截单</a></li>`],
+						[`<li class="index-title-li"><span class="f_l">热推</span><a style="cursor: pointer" class="f_l" title="新鲜的鸡蛋特价甩卖快来抢购">新鲜的鸡蛋特价甩卖快来抢购</a></li>`],
+					],
+					waitTime: 1000,
+					oddRowBGC: '#f5f5f5',
+					evenRowBGC: '#f5f5f5',
+					rowNum: 4
+				}
 			}
 		},
 		computed: {
@@ -552,7 +589,7 @@
 					}
 					console.log(this.messageArr);
 				}
-			}
+			},
 		},
 
 		created() {

@@ -200,7 +200,30 @@ ul:hover #num-box {
 	border-radius: 50%;
 	float: left;
 }
+
 .content-man .me-conter {
 	float: right;
 	margin: 10px 42px 0 0;
+}
+
+.index-hot {
+	height: 246px !important;
+	background-color: transparent !important;
+	border-left: 1px solid #cccccc !important;
+	border-right: 1px solid #cccccc !important;
+	border-bottom: 1px solid #cccccc !important;
+	border-top: 1px solid transparent !important;
+	padding-top: 0 !important;
+	;
+}
+
+.index-hot-dl {
+	margin-left: -12px;
+}
+
+.index-title {
+	border: 1px solid red !important;
+}
+.index-title-li {
+	display: flex;
 }
