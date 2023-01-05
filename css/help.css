@@ -222,7 +222,7 @@ ul:hover #num-box {
 }
 
 .index-title {
-	border: 1px solid red !important;
+	/* border: 1px solid red !important; */
 }
 .index-title-li {
 	display: flex;
