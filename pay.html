@@ -72,7 +72,9 @@
 								<td>¥{{ item.prize }}</td>
 								<td>{{ item.num }}</td>
 								<td>{{parseInt(item.prize) * parseInt(item.num)}}</td>
-								<td><a href="#">提醒发货</a><br>
+								<td>
+									<el-button type="text" @click="remindIt" size="small" :disabled="remindDisabled">
+										提醒发货</el-button>
 									<el-button type="text" @click="delId(index)" size="small">取消订单</el-button>
 								</td>
 								<td><a href="#">评价</a><br>
@@ -102,7 +104,10 @@
 		el: '#app',
 		store,
 		data() {
-			return {}
+			return {
+				remindNum: 0, // 提醒发货的次数
+				remindDisabled: false, // 提醒发货按钮是否可用
+			}
 		},
 		watch: {},
 		computed: {
@@ -148,6 +153,16 @@
 						message: '已取消删除'
 					});
 				});
+			},
+			/*  提醒发货  */
+			remindIt() {
+				this.remindNum += 1;
+				if (this.remindNum > 5) {
+					this.$message.warning("请勿重复提醒！");
+					this.remindDisabled = true;
+				} else {
+					this.$message.success("提醒发货成功！");
+				}
 			}
 		},
 		mounted() {
@@ -158,6 +173,10 @@
 			setTimeout(() => {
 				console.log(store.state.cars);
 			}, 100)
+		},
+		destoryed() {
+			this.remindNum = 0;
+			this.remindDisabled = false
 		}
 	})
 </script>

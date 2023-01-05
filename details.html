@@ -80,9 +80,11 @@
 							</el-input-number>
 						</div>
 
-						<div style="margin: 20px;">
+						<div style="margin: 20px;display: flex;">
 							<el-button size="medium" type="danger">立刻购买</el-button>
-							<el-button @click="inCar" size="medium" type="danger">加入购物车</el-button>
+							<!-- <el-button @click="inCar" size="medium" type="danger"> -->
+							<a href="pay.html" class="details-in-car" @click="inCar">加入购物车</a>
+							<!-- </el-button> -->
 						</div>
 						<li><img src="images/concern.png"><a>关注</a><img src="images/share.png"><a>分享</a></li>
 					</ul>
@@ -170,7 +172,9 @@
 				}
 				store.commit('sGetFormData', formData);
 				localStorage.setItem('resultCars', JSON.stringify(store.state.cars))
-				window.location.href = "/xhsTwo/pay.html";
+
+				// console.log(location);
+				// window.location.href = "/xhsTwo/pay.html";
 			},
 
 			/*  生成随机字符串 id  */
@@ -234,5 +238,23 @@
 
 	.el-carousel__arrow {
 		top: 50% !important;
+	}
+
+	.details-in-car {
+		background-color: #d6442d !important;
+		border-color: #d6442d !important;
+		padding: 10px 20px;
+		font-size: 14px !important;
+		display: block;
+		width: 70px;
+		height: 16px;
+		font-family: Arial;
+		border-radius: 4px !important;
+		color: #FFF;
+		margin-left: 10px;
+	}
+	
+	.details-in-car:hover {
+		color: white !important;
 	}
 </style>
